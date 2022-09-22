@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 from calculator_1 import add, sub, mul, div
 
 
-def main():
-    arguments = len(sys.argv)
+if __name__ == "__main__":
+    arguments = len(argv)
     if (arguments != 4):
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
-    operator = sys.argv[2]
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
+    operator = argv[2]
+    a = int(argv[1])
+    b = int(argv[3])
 
     match operator:
         case '+':
@@ -27,7 +27,3 @@ def main():
             exit(1)
 
     print("{} {} {} = {}".format(a, operator, b, result))
-
-
-if __name__ == "__main__":
-    main()
