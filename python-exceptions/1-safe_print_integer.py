@@ -9,5 +9,7 @@ def safe_print_integer(value):
         if (check_value is True):
             print("{:d}".format(value))
             return True
+        else:
+            return False
     except ValueError:
-        return False
+        pass
