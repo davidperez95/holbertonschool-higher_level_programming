@@ -11,7 +11,7 @@ class Square:
 
         if size < 0:
             raise ValueError("size must be >= 0")
-        
+
         self._size = size
 
     @property
@@ -27,7 +27,7 @@ class Square:
 
         if value < 0:
             raise ValueError("size must be >= 0")
-        
+
         self._size = value
 
     def area(self):
