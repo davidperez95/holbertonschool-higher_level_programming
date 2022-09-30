@@ -6,28 +6,30 @@ class Square:
     """Defines a square"""
     def __init__(self, size=0):
         """Initializes the square with private size"""
-        if (type(size) is int):
-            self._Square__size = size
-        else:
+        if (type(size) is not int):
             raise TypeError("size must be an integer")
 
         if size < 0:
             raise ValueError("size must be >= 0")
-
-    def size(self):
-        """Getter method to return the square value"""
-        return self._Square__size
-
-    def size(self, value):
-        """Setter method to change the square value"""
-        if type(value) is int:
-            self._Square__size = value
-        else:
-            raise TypeError("size must be an integer")
         
+        self._size = size
+
+    @property
+    def size(self):
+        """Getter method to return the size"""
+        return self._size
+
+    @size.setter
+    def size(self, value):
+        """Setter method to modify the size"""
+        if (type(value) is not int):
+            raise TypeError("size must be an integer")
+
         if value < 0:
             raise ValueError("size must be >= 0")
+        
+        self._size = value
 
     def area(self):
         """Returns the area of the square"""
-        return (self._Square__size * self._Square__size)
+        return (self._size * self._size)
