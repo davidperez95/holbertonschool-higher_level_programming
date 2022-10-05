@@ -35,6 +35,22 @@ class Test_max_integer(unittest.TestCase):
         e = [5, 20, 30, 10]
         self.assertEqual(max_integer(e), 30)
 
+    def test_max_at_end(self):
+        e = [5, 20, 10, 30]
+        self.assertEqual(max_integer(e), 30)
+
+    def test_max_at_begin(self):
+        e = [30, 20, 10, 5]
+        self.assertEqual(max_integer(e), 30)
+
+    def test_one_negative(self):
+        e = [20, 30, -10, 5]
+        self.assertEqual(max_integer(e), 30)
+
+    def test_only_negative(self):
+        e = [-20, -30, -10, -5]
+        self.assertEqual(max_integer(e), -5)
+
     def test_none(self):
         """Test for passing None argument"""
         with self.assertRaises(TypeError):
