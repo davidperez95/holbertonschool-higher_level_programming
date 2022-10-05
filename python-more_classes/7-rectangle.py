@@ -60,7 +60,7 @@ class Rectangle():
         """Returns printable string reprentation of a rectangle"""
         string = ""
         if self.__width != 0 and self.__height != 0:
-            string += "\n".join("{}".format(Rectangle.print_symbol) * self.__width
+            string += "\n".join(str(self.print_symbol) * self.__width
                                 for i in range(self.__height))
         return string
 
