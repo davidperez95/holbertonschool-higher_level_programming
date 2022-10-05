@@ -10,11 +10,18 @@ def text_indentation(text):
 
     tokens = ['.', '?', ':']
 
-    for char in range(len(text)):
-        if text[char] in tokens:
-            print("{}".format(text[char]))
-            print("")
-        elif text[char] == ' ' and text[char - 1] in tokens:
-            continue
-        else:
-            print("{}".format(text[char]), end='')
+    flag = 0
+
+    for i in text:
+        if flag == 0:
+            if i == ' ':
+                continue:
+            else:
+                flag = 1
+        if flag == 1:
+            if i in tokens:
+                print(i)
+                print()
+                flag = 0
+            else:
+                print(i, end='')
