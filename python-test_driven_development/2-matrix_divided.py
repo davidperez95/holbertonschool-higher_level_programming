@@ -5,8 +5,7 @@
 def matrix_divided(matrix, div):
     """Function that checks matrix and pass div to the sublist"""
 
-    type_error_str = "matrix must be a matrix (list of lists)\
-        of integers/floats"
+    type_str = ('matrix must be a matrix (list of lists) of integers/floats')
 
     """Verify div type"""
     if type(div) is not int and type(div) is not float:
@@ -18,12 +17,12 @@ def matrix_divided(matrix, div):
 
     """Verify if matrix is a list"""
     if type(matrix) is not list:
-        raise TypeError(type_error_str)
+        raise TypeError(type_str)
 
     """Verify if matrix contain only lists"""
     for i in matrix:
         if type(i) is not list:
-            raise TypeError(type_error_str)
+            raise TypeError(type_str)
 
     """Verify if the lists in matrix have the same length"""
     lists_length = len(matrix[0])
@@ -36,7 +35,7 @@ def matrix_divided(matrix, div):
         for j in range(len(matrix[i])):
             if type(matrix[i][j]) is not int and \
                     type(matrix[i][j]) is not float:
-                raise TypeError(type_error_str)
+                raise TypeError(type_str)
 
     """Execute the division"""
     new_matrix = list(map(list, matrix))
