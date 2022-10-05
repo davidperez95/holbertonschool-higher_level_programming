@@ -59,6 +59,10 @@ Check for infinite integer:
 	...
 	OverflowError: cannot convert float infinity to integer
 
+Check for one missing argument:
+	>>> add_integer(1)
+	99
+
 Check for no arguments:
 	>>> add_integer()
 	Traceback (most recent call last):
