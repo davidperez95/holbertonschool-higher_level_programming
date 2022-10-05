@@ -58,9 +58,3 @@ Check for infinite integer:
 	Traceback (most recent call last):
 	...
 	OverflowError: cannot convert float infinity to integer
-
-Check for missing one argument:
-	>>> add_integer(5)
-	Traceback (most recent last call):
-	...
-	TypeError: add_integer() missing 1 required positional argument: 'b'
