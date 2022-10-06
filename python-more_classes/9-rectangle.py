@@ -58,10 +58,12 @@ class Rectangle():
 
     @classmethod
     def square(cls, size=0):
+        """Class Method that returns a new object with size"""
         return cls(width=size, height=size)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """Static method that compare two instances of Rectangle"""
         if isinstance(rect_1, Rectangle) is False:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if isinstance(rect_2, Rectangle) is False:
