@@ -1,0 +1,32 @@
+The '1-my_list' tests module
+======================
+
+Using 'Mylist' class
+---------------------
+
+Importing the function from the module:
+    >>> Mylist = __import__("1-my_list").Mylist
+
+Check for module docstring:
+    >>> m = __import__("1-my_list").__doc__
+    >>> len(m) > 1
+    True
+
+Check for class docstring:
+    >>> c = __import__("1.my_list").my_list.__doc__
+    >>> len(c) > 1
+    True
+
+Check for methods docstring:
+    >>> met = __import__("1-my_list").Mylist.print_sorted.__doc__
+    >>> len(met) > 1
+    True
+
+Check if Mylist inherits from list:
+    >>> issubclass(Mylist, list)
+    True
+
+Check for empty list:
+    >>> l = Mylist()
+    >>> l.print_sorted()
+    []
