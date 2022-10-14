@@ -1,11 +1,11 @@
 The ``1-my_list`` tests module
 ======================
 
-Using ``Mylist`` class
+Using ``MyList`` class
 ---------------------
 
 Importing the class from the module:
-    >>> Mylist = __import__("1-my_list").Mylist
+    >>> MyList = __import__("1-my_list").MyList
 
 Check for module docstring:
     >>> m = __import__("1-my_list").__doc__
@@ -13,20 +13,61 @@ Check for module docstring:
     True
 
 Check for class docstring:
-    >>> c = __import__("1.my_list").my_list.__doc__
+    >>> c = __import__("1-my_list").MyList.__doc__
     >>> len(c) > 1
     True
 
 Check for methods docstring:
-    >>> met = __import__("1-my_list").Mylist.print_sorted.__doc__
+    >>> met = __import__("1-my_list").MyList.print_sorted.__doc__
     >>> len(met) > 1
     True
 
 Check if Mylist inherits from list:
-    >>> issubclass(Mylist, list)
+    >>> issubclass(MyList, list)
     True
 
 Check for empty list:
-    >>> l = Mylist()
+    >>> l = MyList()
     >>> l.print_sorted()
     []
+
+Check for append intems:
+    >>> l.append(1)
+    >>> l.append(2)
+    >>> l.append(3)
+    >>> l.append(4)
+    >>> print(l)
+    [1, 2, 3, 4]
+
+Check for print sorted method:
+    >>> l.print_sorted()
+    [1, 2, 3, 4]
+
+Check for print sorted in unordered list:
+    >>> l = MyList()
+    >>> l.append(4)
+    >>> l.append(3)
+    >>> l.append(2)
+    >>> l.append(1)
+    >>> print(l)
+    [4, 3, 2, 1]
+    >>> l.print_sorted()
+    [1, 2, 3, 4]
+    >>> print(l)
+    [4, 3, 2, 1]
+
+Check for one negative number:
+    >>> l.append(-1)
+    >>> l.append(5)
+    >>> print(l)
+    [4, 3, 2, 1, -1, 5]
+    >>> l.print_sorted()
+    [-1, 1, 2, 3, 4, 5]
+    >>> print(l)
+    [4, 3, 2, 1, -1, 5]
+
+Check for more than one argument:
+    >>> l.print_sorted(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
