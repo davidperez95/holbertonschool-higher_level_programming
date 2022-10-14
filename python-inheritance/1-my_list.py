@@ -3,7 +3,7 @@
 
 
 class Mylist(list):
-    """Mylist class that inherits from __list__"""
+    """Subclass from list"""
     def __init__(self):
         """Create a new object or instance"""
         super().__init__()
