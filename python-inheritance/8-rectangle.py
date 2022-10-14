@@ -2,9 +2,6 @@
 """Module that defines the BaseGeometry Class"""
 
 
-from turtle import width
-
-
 class BaseGeometry():
     """super class BaseGeometry"""
     def __init__(self):
