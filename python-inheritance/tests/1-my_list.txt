@@ -1,10 +1,10 @@
-The '1-my_list' tests module
+The ``1-my_list`` tests module
 ======================
 
-Using 'Mylist' class
+Using ``Mylist`` class
 ---------------------
 
-Importing the function from the module:
+Importing the class from the module:
     >>> Mylist = __import__("1-my_list").Mylist
 
 Check for module docstring:
