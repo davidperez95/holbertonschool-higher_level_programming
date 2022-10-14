@@ -3,11 +3,11 @@
 
 
 class Mylist(list):
-    """Subclass from list"""
+    """subclass from list"""
     def __init__(self):
-        """Create a new object or instance"""
+        """create a new object or instance"""
         super().__init__()
 
     def print_sorted(self):
-        """Print the list sorted"""
+        """print the list sorted"""
         print(sorted(self))
