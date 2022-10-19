@@ -84,3 +84,17 @@ class Rectangle(Base):
                                                                  self.__y,
                                                                  self.__width,
                                                                  self.__height)
+
+    def update(self, *args):
+        """Updates the instance attributes"""
+        for index, value in enumerate(args):
+            if index == 0:
+                self.id = value
+            elif index == 1:
+                self.__width = value
+            elif index == 2:
+                self.__height = value
+            elif index == 3:
+                self.__x = value
+            elif index == 4:
+                self.__y = value
