@@ -38,7 +38,7 @@ class Base():
         if list_objs is not None:
             for index in list_objs:
                 new_list.append(cls.to_dictionary(index))
-        with open(filename, "w") as my_file:
+        with open(filename, "w", encoding="utf-8") as my_file:
             my_file.write(cls.to_json_string(new_list))
 
     @classmethod
@@ -50,3 +50,16 @@ class Base():
             new_instance = cls(1, 0, 0)
         new_instance.update(**dictionary)
         return new_instance
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        instance_list = []
+        try:
+            with open(filename, "r", encoding="utf-8") as my_file:
+                instance_list = cls.from_json_string(my_file.read())
+            for index, value in enumerate(instance_list):
+                instance_list[index] = cls.create(instance_list[index])
+        except:
+            pass
+        return instance_list
