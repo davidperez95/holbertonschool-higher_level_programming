@@ -36,3 +36,8 @@ class Test_base(unittest.TestCase):
         test = Base.to_json_string(None)
         self.assertEqual(test, '[]')
 
+    def test_to_json_string_arg(self):
+        """Test if the to_json_string method exists and pass an argument"""
+        test = Base.to_json_string([{'id': 12}])
+        self.assertEqual(test, '[{"id": 12}]')
+
