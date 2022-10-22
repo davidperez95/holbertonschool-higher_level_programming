@@ -40,3 +40,13 @@ class Base():
                 new_list.append(cls.to_dictionary(index))
         with open(filename, "w") as my_file:
             my_file.write(cls.to_json_string(new_list))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        if cls.__name__ == "Rectangle":
+            new_instance = cls(1, 1)
+        elif cls.__name__ == "Square":
+            new_instance = cls(1)
+        new_instance.update(**dictionary)
+        return new_instance
