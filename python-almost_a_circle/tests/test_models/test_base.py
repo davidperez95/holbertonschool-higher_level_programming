@@ -22,3 +22,8 @@ class Test_base(unittest.TestCase):
         b = Base()
         self.assertEqual(b.id, 1)
 
+    def test_set_id(self):
+        """Tests setting the id to 89"""
+        b = Base(89)
+        self.assertEqual(b.id, 89)
+
