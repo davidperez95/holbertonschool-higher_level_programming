@@ -27,3 +27,7 @@ class Test_base(unittest.TestCase):
         b = Base(89)
         self.assertEqual(b.id, 89)
 
+    def test_to_json_string(self):
+        """Test if the to_json_string method exists"""
+        unittest.assertIsNotNone(Base.to_json_string)
+
