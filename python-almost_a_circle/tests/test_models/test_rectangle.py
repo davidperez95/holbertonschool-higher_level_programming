@@ -44,11 +44,12 @@ class Test_rectangle(unittest.TestCase):
 
     def test_rectangle_all_arg(self):
         """Test the Rectangle class with all arguments"""
-        r = Rectangle(1, 2, 3, 4)
+        r = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r.width, 1)
         self.assertEqual(r.height, 2)
         self.assertEqual(r.x, 3)
         self.assertEqual(r.y, 4)
+        self.assertEqual(r.id, 5)
 
     def test_width_neg(self):
         """Test the Rectangle class with negative arguments"""
