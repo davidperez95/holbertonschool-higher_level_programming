@@ -23,5 +23,63 @@ class Test_rectangle(unittest.TestCase):
         self.assertEqual(r.height, 2)
 
     def test_width_str(self):
+        """Test the Rectangle class with an argument as string"""
         with self.assertRaises(TypeError):
             r = Rectangle("1", 2)
+
+    def test_height_str(self):
+        """Test the Rectangle class with an argument as string"""
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, "2")
+
+    def test_x_str(self):
+        """Test the Rectangle class with an argument as string"""
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, 2, "3")
+
+    def test_y_str(self):
+        """Test the Rectangle class with an argument as string"""
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, 2, 3, "4")
+
+    def test_rectangle_all_arg(self):
+        """Test the Rectangle class with all arguments"""
+        r = Rectangle(1, 2, 3, 4)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+        self.assertEqual(r.x, 3)
+        self.assertEqual(r.y, 4)
+
+    def test_width_neg(self):
+        """Test the Rectangle class with negative arguments"""
+        with self.assertRaises(ValueError):
+            r = Rectangle(-1, 2)
+
+    def test_height_neg(self):
+        """Test the Rectangle class with negative arguments"""
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, -2)
+
+    def test_width_cero(self):
+        """Test the Rectangle class with arguments as cero"""
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 2)
+
+    def test_height_cero(self):
+        """Test the Rectangle class with arguments as cero"""
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 0)
+
+    def test_x_neg(self):
+        """Test the Rectangle class with negative arguments"""
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, -3)
+
+    def test_y_neg(self):
+        """Test the Rectangle class with negative arguments"""
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, 3, -4)
+
+    def test_area_exists(self):
+        """Test if the area method exists"""
+        self.assertIsNotNone(Rectangle.area)        
