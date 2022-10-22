@@ -83,4 +83,9 @@ class Test_rectangle(unittest.TestCase):
 
     def test_area_exists(self):
         """Test if the area method exists"""
-        self.assertIsNotNone(Rectangle.area)        
+        self.assertIsNotNone(Rectangle.area)
+
+    def test_area_method(self):
+        """Test if the area method works"""        
+        r = Rectangle(5, 5)
+        self.assertEqual(r.area(), 25)
