@@ -17,4 +17,8 @@ class Test_base_docs(unittest.TestCase):
 
 class Test_base(unittest.TestCase):
     """Test the Base class"""
-    
+    def test_id(self):
+        """Tests for assigning automatically an id"""
+        b = Base()
+        self.assertEqual(b.id, 1)
+
