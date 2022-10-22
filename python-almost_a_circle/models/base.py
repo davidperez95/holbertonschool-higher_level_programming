@@ -59,7 +59,7 @@ class Base():
             with open(filename, "r", encoding="utf-8") as my_file:
                 instance_list = cls.from_json_string(my_file.read())
             for index, value in enumerate(instance_list):
-                instance_list[index] = cls.create(instance_list[index])
+                instance_list[index] = cls.create(**instance_list[index])
         except:
             pass
         return instance_list
