@@ -50,3 +50,8 @@ class Test_base(unittest.TestCase):
         test = Base.from_json_string(None)
         self.assertEqual(test, [])
 
+    def test_from_json_string_arg(self):
+        """Test if the from_json_string method exists and pass and argument"""
+        test = Base.from_json_string("[]")
+        self.assertEqual(test, [])
+
