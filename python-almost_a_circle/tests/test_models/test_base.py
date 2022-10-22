@@ -29,5 +29,5 @@ class Test_base(unittest.TestCase):
 
     def test_to_json_string(self):
         """Test if the to_json_string method exists"""
-        unittest.assertIsNotNone(Base.to_json_string)
+        self.assertIsNotNone(Base.to_json_string)
 
