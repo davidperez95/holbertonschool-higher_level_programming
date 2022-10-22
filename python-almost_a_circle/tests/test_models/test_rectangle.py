@@ -19,4 +19,5 @@ class Test_rectangle(unittest.TestCase):
     """Test the Rectangle class"""
     def test_rectangle(self):
         r = Rectangle(1, 2)
-        self.assertIsInstance(r, Rectangle)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
