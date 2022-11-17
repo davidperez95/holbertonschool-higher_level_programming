@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     cursor = data_base.cursor()
 
-    cursor.execute('SELECT * FROM states WHERE name LIKE "N%"')
+    cursor.execute('SELECT * FROM states WHERE name LIKE BINARY "N%"')
 
     data_rows = cursor.fetchall()
 
