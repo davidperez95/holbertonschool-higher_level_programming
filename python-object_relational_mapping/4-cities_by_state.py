@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""
-takes in an argument and displays all values in the states table
-of hbtn_0e_0_usa where name matches the argument
-safe from a sql injection
-"""
+"""lists all cities from the database hbtn_0e_4_usa"""
 
 import MySQLdb
 from sys import argv
@@ -13,20 +9,20 @@ if __name__ == '__main__':
     data_base = MySQLdb.connect(host='localhost', user=argv[1],
                                 password=argv[2], database=argv[3])
 
-    state_arg = argv[4]
-
     cursor = data_base.cursor()
 
     cursor.execute("""
                     SELECT
-                        *
+                        cities.id, cities.name, states.name
                     FROM
+                        cities
+                    INNER JOIN
                         states
-                    WHERE
-                        name LIKE BINARY %(name)s
-                    """, {
-                        'name': state_arg
-                    })
+                    ON
+                        cities.state_id = states.id
+                    ORDER BY
+                        cities.id
+                    """)
 
     data_rows = cursor.fetchall()
 
