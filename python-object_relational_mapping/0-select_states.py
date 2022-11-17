@@ -14,9 +14,13 @@ if __name__ == '__main__':
         3. database password
         4. database name
     """
-    data_base = MySQLdb.connect(host='localhost', user=argv[1], password=argv[2], database=argv[3])
+    data_base = MySQLdb.connect(host='localhost', user=argv[1],
+                                password=argv[2], database=argv[3])
 
-    """Creates a cursor that is capable of executing SQL queries on the database"""
+    """
+    Creates a cursor that is capable of
+    executing SQL queries on the database
+    """
     cursor = data_base.cursor()
 
     """
