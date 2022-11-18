@@ -11,7 +11,9 @@ import sys
 
 if __name__ == "__main__":
 
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+
     Base.metadata.create_all(engine)
 
     connection = engine.connect()
@@ -22,5 +24,5 @@ if __name__ == "__main__":
 
     results = session.query(State).order_by(State.id)
 
-    for row in results:
-        print("{}: {}".format(row.id, row.name))
+    for states in results:
+        print("{}: {}".format(states.id, states.name))
