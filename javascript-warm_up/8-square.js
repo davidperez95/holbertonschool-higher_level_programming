@@ -5,10 +5,10 @@ const args = process.argv;
 
 const number = parseInt(args[2]);
 if (isNaN(number) === true) {
-  console.log('Missing size')
+  console.log('Missing size');
 }
-const array = [];
 
+const array = [];
 for (let i = 0; i < number; i++) {
   array.push('X');
 }
