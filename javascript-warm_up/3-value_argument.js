@@ -9,10 +9,8 @@ while (args[length] !== undefined) {
   length++;
 }
 
-if (length > 2) {
-  for (let i = 2; i < length; i++) {
-    console.log(args[i]);
-  }
+if (length >= 2) {
+  console.log(args[2])
 } else {
-  console.log('No argument');
+  console.log('No argument')
 }
