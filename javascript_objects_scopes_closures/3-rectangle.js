@@ -15,7 +15,7 @@ module.exports = class Rectangle {
     }
     const setense = array.join('');
     for (let i = 0; i < this.height; i++) {
-      console.log(setense)
+      console.log(setense);
     }
   }
 };
