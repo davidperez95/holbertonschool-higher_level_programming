@@ -25,7 +25,7 @@ module.exports = class Rectangle {
     this.width = aux;
   }
 
-  bouble () {
+  double () {
     this.height = this.height * 2;
     this.width = this.width * 2;
   }
