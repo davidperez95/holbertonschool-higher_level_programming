@@ -8,10 +8,10 @@ module.exports = class Rectangle {
     }
   }
 
-  print () {
+  print (char = 'X') {
     const array = [];
     for (let i = 0; i < this.width; i++) {
-      array.push('X');
+      array.push(char);
     }
     const setense = array.join('');
     for (let i = 0; i < this.height; i++) {
