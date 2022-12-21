@@ -7,19 +7,7 @@ module.exports = class Square extends Rectangle {
     super(size, size);
   }
 
-  charPrint (c) {
-    if (c === undefined) {
-      c = 'X';
-    }
-
-    const array = [];
-    for (let i = 0; i < this.size; i++) {
-      array.push(c);
-    }
-
-    const sentence = array.join('');
-    for (let i = 0; i < this.size; i++) {
-      console.log(sentence);
-    }
+  charPrint (c = 'X') {
+    super.print(c)
   }
 };
