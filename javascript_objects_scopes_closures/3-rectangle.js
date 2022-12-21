@@ -9,14 +9,13 @@ module.exports = class Rectangle {
   }
 
   print () {
+    const array = [];
+    for (let i = 0; i < this.width; i++) {
+      array.push('X');
+    }
+    const setense = array.join('');
     for (let i = 0; i < this.height; i++) {
-      let j = 0;
-      for (; j < this.width; j++) {
-        process.stdout.write('X');
-      }
-      if (j === this.width) {
-        console.log('');
-      }
+      console.log(setense)
     }
   }
 };
