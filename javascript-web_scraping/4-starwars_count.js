@@ -2,17 +2,20 @@
 
 const request = require('request');
 const url = process.argv[2];
-const characterURL = 'https://swapi-api.hbtn.io/api/people/18/';
+let counter = 0;
 
 request(url, function (error, response, body) {
   if (error) console.log(error);
-  const bodyObj = JSON.parse(body);
-  const resultsLength = bodyObj.results.length;
-  let counter = 0;
+  const bodyObj = JSON.parse(body).results;
 
-  for (let i = 0; i < resultsLength; i++) {
-    if (bodyObj.results[i].characters.includes(characterURL) === true) {
-      counter += 1;
+  for (let i = 0; i < bodyObj.length; i++) {
+    const charactersList = bodyObj[i].characters;
+
+    for (let j = 0; j < charactersList.length; j++) {
+      const characterID = charactersList[j].split('/')[5];
+      if (characterID === '18') {
+        counter += 1;
+      }
     }
   }
 
